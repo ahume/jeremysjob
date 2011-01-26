@@ -73,7 +73,7 @@ def sendJobTitleToTwitter(job_title):
     auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
     bot = tweepy.API(auth)
     
-    # bot.update_status("Hello - I've been given a shiny new OAuth upgrade. Hope Jeremy tests me soon!")
+    # bot.update_status("Hello - I've been given a not particularly shiny upgrade. Hope Jeremy tests me soon!")
     
     bot.update_status("Jeremy has a new job title: %s" % job_title)
     

@@ -1,0 +1,3 @@
+Chunk of appengine code that runs the bot for http://twitter.com/jeremysjob
+
+You need a settings.py file with Twitter OAuth details in.
