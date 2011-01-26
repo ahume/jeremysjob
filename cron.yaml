@@ -1,0 +1,4 @@
+cron:
+- description: Check job title updates
+  url: /
+  schedule: every 5 minutes
