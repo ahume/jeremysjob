@@ -68,8 +68,6 @@ def matchesPreviousJobTitle(new_job_title):
     
 def sendJobTitleToTwitter(job_title):
     logging.info("Sending to Twitter")
-    twitter_id = "jeremysjob"
-    twitter_pwd = "gasRnaHNC42max"
     
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
