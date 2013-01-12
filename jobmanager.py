@@ -4,6 +4,7 @@ import datetime
 import logging
 import tweepy
 from BeautifulSoup import BeautifulSoup
+import HTMLParser
 
 from models import JobTitle
 
@@ -22,13 +23,12 @@ def checkjob():
         sendEmailToAdmin("Failed retreiving page from clearleft.com.")
         return False
         
-        
     try:
         doc = BeautifulSoup(response.content)
-        jeremy_node = doc.find("li", {"class": "vcard jeremykeith"} )
-        role_node = jeremy_node.find("p", {"class": "role meta"})
-    
-        role = unicode(role_node.contents[0])
+        jeremy_node = doc.findAll("li", {"class": "col hcard"})[2]
+        role_node = jeremy_node.find("p", {"class": "meta"})
+        h = HTMLParser.HTMLParser()
+        role = h.unescape(role_node.contents[0])
         #role = "A test"
     except:
         logging.info("Failed parsing HTML on /is/ page.")
