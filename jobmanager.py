@@ -18,7 +18,7 @@ def checkjob():
 
     try:
         # Get the clearleft jobs page
-        response = urlfetch.fetch(CLEARLEFT_URL, headers = {'Cache-Control' : 'max-age=240'})
+        response = urlfetch.fetch(CLEARLEFT_URL, headers = {'Cache-Control' : 'max-age=240'}, deadline=10)
     except:
         sendEmailToAdmin("Failed retreiving page from clearleft.com.")
         return False
