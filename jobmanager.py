@@ -25,7 +25,7 @@ def checkjob():
         
     try:
         doc = BeautifulSoup(response.content)
-        jeremy_node = doc.findAll("li", {"class": "col hcard"})[2]
+        jeremy_node = doc.findAll("li", {"class": "col vcard"})[2]
         role_node = jeremy_node.find("p", {"class": "meta"})
         h = HTMLParser.HTMLParser()
         role = h.unescape(role_node.contents[0])
